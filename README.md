@@ -2,19 +2,6 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0.
 
-
-## NodeJS and NPM
-
-Must download and install NodeJS and NPM
-
-## Download Angular
-
-Run `npm install -g @angular/cli`
-
-## Before running
-
-Navigate to the this projects folder in and run `npm i` to install all the modules and dependencies
-
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

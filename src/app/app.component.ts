@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import {  OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
 
-import {FlightService } from './flight.service';
+import {FlightService } from '@services/flight.service';
 
 @Component({
   selector: 'app-root',
