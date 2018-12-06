@@ -7,7 +7,10 @@ import { AppRoutingModule } from '@app/app-routing.module';
 import { AppComponent } from '@app/app.component';
 import { Login } from '@components/login/login.component';
 import { Registration } from '@components/registration/registration.component';
-import { Password } from '@components/password/password.component';
+import { Home } from '@components/home/home.component';
+import { Far } from '@components/far/far.component';
+import { First } from '@components/first/first.component';
+
 
 
 
@@ -17,7 +20,9 @@ import { Password } from '@components/password/password.component';
     AppComponent,
     Login,
     Registration,
-    Password
+    Home,
+    Far,
+    First
   ],
   imports: [
     BrowserModule,
