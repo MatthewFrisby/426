@@ -51,7 +51,7 @@ export class Login implements OnInit {
             .subscribe(
                 data => {
 
-                    this.router.navigate(['']);
+                    this.router.navigate(['home']);
                 },
                 error => {
 
