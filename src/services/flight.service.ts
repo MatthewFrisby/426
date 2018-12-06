@@ -25,7 +25,6 @@ export class FlightService {
 
   loginUser(user: User[]): Observable<User[]>{
     const httpPostOptions ={withCredentials: true}
-
     return this.http.post<User[]>(this._url+'/sessions', ({user: user}))
 
 
@@ -36,9 +35,9 @@ export class FlightService {
     return this.http.delete(this._url+'/sessions', { headers, withCredentials: true } )
   }
 
-  allAirports(){
+  allAirports(): Observable<Airport[]>{
     const headers = new HttpHeaders({'Content-Type': 'Content-Type: application/json'});
-    return this.http.get(this._url+'/airports/131890', { headers, withCredentials: true } )
+    return this.http.get<Airport[]>(this._url+'/airports/131890', { headers, withCredentials: true } )
     }
 
 
