@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import  {User} from '@models/user.model';
+import { Airport } from '@models/airport.model';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpHeaders } from '@angular/common/http';
@@ -37,7 +38,7 @@ export class FlightService {
 
   allAirports(){
     const headers = new HttpHeaders({'Content-Type': 'Content-Type: application/json'});
-    return this.http.get(this._url+'/airports?filter[code]=RDU', { headers, withCredentials: true } )
+    return this.http.get(this._url+'/airports/131890', { headers, withCredentials: true } )
     }
 
 

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {  OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
+import { Airport } from '@models/airport.model';
 
 import {FlightService } from '@services/flight.service';
 
@@ -12,7 +13,7 @@ import {FlightService } from '@services/flight.service';
   providers: [FlightService],
   template:
   `<button (click)="onClickMe()">Click me!</button>
-    {{data | json}} YO`
+    {{sdata | json}}`
 })
 
 
@@ -20,11 +21,14 @@ export class First{
 
     constructor(
         private router: Router,
-        private flight: FlightService,
+        private flight: FlightService
 
     ) {}
 
+
     onClickMe(){
-    const data = this.flight.allAirports()
+
+      const sdata = this.flight.allAirports().subscribe();
+      return sdata
   }
 }
