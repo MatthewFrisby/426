@@ -16,7 +16,7 @@ import {FlightService } from '@services/flight.service';
   template:
   `<input (keyup)="onKey($event)">
   <p>{{values}}</p>
-  <button (click)="onClickMe()">Click me!</button>
+  <button (click)="onClickMe()">Airport Name</button>
     {{air | json}}
     <br>
     <h1>{{test}}</h1>
@@ -37,18 +37,19 @@ export class First implements OnInit{
     ) {}
 
     ngOnInit() {
-      this.flight.allAirports().subscribe(data => this.air = data);
-      this.test = this.air.city;
+
     }
 
-    onKey(event: any) { // without type info
-    this.values += event.target.value + ' | ';
+    onKey(event: any) {
+      this.flight.allAirports(event.target.value).subscribe(data => {this.air = data["0"] } );//.subscribe(data => this.air = data);
+
   }
 
 
 
 
     onClickMe(){
+      this.test = this.air.name;
 
   }
 
