@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import  {User} from '@models/user.model';
 import { Airport } from '@models/airport.model';
+import { Flight } from '@models/flight.model';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpHeaders } from '@angular/common/http';
@@ -42,6 +43,11 @@ export class FlightService {
       const headers = new HttpHeaders({'Content-Type': 'Content-Type: application/json'});
       return this.http.get<Airport[]>(this._url+'/airports?filter[code_ilike]='+code, { headers, withCredentials: true } );
       }
+
+      findFlights(time: string): Observable<Flight[]>{
+        const headers = new HttpHeaders({'Content-Type': 'Content-Type: application/json'});
+        return this.http.get<Flight[]>(this._url+'/flights?filter[departs_at_ge]='+time, { headers, withCredentials: true } );
+        }
 
 
 

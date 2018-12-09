@@ -13,16 +13,7 @@ import {FlightService } from '@services/flight.service';
   selector: 'home-root',
   templateUrl: './home.component.html',
   providers: [FlightService],
-  template:
-  `
-  <input (keyup)="onKey($event)">
-  <li *ngFor="let airport of air" (click)="onSelect(airport)">
-  <b> {{airport.city}} </b>
-  </li>
 
-
-
-    `
 })
 
 //<input (keyup)="onKey($event)">

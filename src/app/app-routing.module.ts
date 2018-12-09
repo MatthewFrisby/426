@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'login', component: Login},
   {path: 'register', component: Registration},
   {path: 'home', component: Home},
-  {path: 'find_flight', component: FindFlight}
+  {path: 'find_flight/:code', component: FindFlight}
 
 
 ];

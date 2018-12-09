@@ -1,1 +1,7 @@
-<h1>FIRST</h1>
+<input (keyup)="onKey($event)">
+
+<li *ngFor="let airport of air" (click)="onSelect(airport)">
+    <a routerLink="/find_flight/{{airport.code}}">
+      {{airport.city}}
+    </a>
+</li>
