@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { Login } from '@components/login/login.component';
 import { Registration } from '@components/registration/registration.component';
 import { Home } from '@components/home/home.component';
-import { Far } from '@components/far/far.component';
-import { First } from '@components/first/first.component';
+import { FindFlight } from '@components/find_flight/find_flight.component';
+
 
 
 
@@ -14,8 +14,8 @@ const routes: Routes = [
   {path: 'login', component: Login},
   {path: 'register', component: Registration},
   {path: 'home', component: Home},
-  {path: 'far', component: Far},
-  {path: 'first', component: First},
+  {path: 'find_flight', component: FindFlight}
+
 
 ];
 

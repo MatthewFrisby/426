@@ -8,8 +8,8 @@ import { AppComponent } from '@app/app.component';
 import { Login } from '@components/login/login.component';
 import { Registration } from '@components/registration/registration.component';
 import { Home } from '@components/home/home.component';
-import { Far } from '@components/far/far.component';
-import { First } from '@components/first/first.component';
+import { FindFlight } from '@components/find_flight/find_flight.component';
+
 
 
 
@@ -21,8 +21,7 @@ import { First } from '@components/first/first.component';
     Login,
     Registration,
     Home,
-    Far,
-    First
+    FindFlight
   ],
   imports: [
     BrowserModule,

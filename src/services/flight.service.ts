@@ -33,10 +33,15 @@ export class FlightService {
     return this.http.delete(this._url+'/sessions', { headers, withCredentials: true } )
   }
 
-  allAirports(city: string): Observable<Airport[]>{
+  allAirports(): Observable<Airport[]>{
     const headers = new HttpHeaders({'Content-Type': 'Content-Type: application/json'});
-    return this.http.get<Airport[]>(this._url+'/airports?filter[city]='+city, { headers, withCredentials: true } );
+    return this.http.get<Airport[]>(this._url+'/airports', { headers, withCredentials: true } );
     }
+
+    filterAirports(code: string): Observable<Airport[]>{
+      const headers = new HttpHeaders({'Content-Type': 'Content-Type: application/json'});
+      return this.http.get<Airport[]>(this._url+'/airports?filter[code_ilike]='+code, { headers, withCredentials: true } );
+      }
 
 
 
