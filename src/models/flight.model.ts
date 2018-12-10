@@ -8,6 +8,4 @@ arrival_id: number;
 next_flight_id: number;
 airline_id: number;
 info: string;
-
-
 }

@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import  {User} from '@models/user.model';
 import { Airport } from '@models/airport.model';
 import { Flight } from '@models/flight.model';
+import { Article } from '@models/article.model';
+import { News } from '@models/news.model';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpHeaders } from '@angular/common/http';
@@ -11,13 +13,11 @@ import { HttpHeaders } from '@angular/common/http';
 @Injectable()
 export class FlightService {
 
-
-
-
   private _url: string = "http://comp426.cs.unc.edu:3001"
+  private _news: string = "https://newsapi.org/v2/everything?pageSize=1&q="
+  private news_: string = "%20news&apiKey=fb033527902d4bc89e9706ddea1244f0"
 
   constructor(private http: HttpClient) { }
-
 
   createUser(user: User[]): Observable<User[]>{
     const headers = new HttpHeaders({'Content-Type': 'Content-Type: application/json'});
@@ -37,21 +37,20 @@ export class FlightService {
   allAirports(): Observable<Airport[]>{
     const headers = new HttpHeaders({'Content-Type': 'Content-Type: application/json'});
     return this.http.get<Airport[]>(this._url+'/airports', { headers, withCredentials: true } );
-    }
+  }
 
-    filterAirports(code: string): Observable<Airport[]>{
-      const headers = new HttpHeaders({'Content-Type': 'Content-Type: application/json'});
-      return this.http.get<Airport[]>(this._url+'/airports?filter[code_ilike]='+code, { headers, withCredentials: true } );
-      }
+  filterAirports(code: string): Observable<Airport[]>{
+    const headers = new HttpHeaders({'Content-Type': 'Content-Type: application/json'});
+    return this.http.get<Airport[]>(this._url+'/airports?filter[code_ilike]='+code, { headers, withCredentials: true } );
+  }
 
-      findFlights(time: string): Observable<Flight[]>{
-        const headers = new HttpHeaders({'Content-Type': 'Content-Type: application/json'});
-        return this.http.get<Flight[]>(this._url+'/flights?filter[departs_at_ge]='+time, { headers, withCredentials: true } );
-        }
+  findFlights(time: string): Observable<Flight[]>{
+    const headers = new HttpHeaders({'Content-Type': 'Content-Type: application/json'});
+    return this.http.get<Flight[]>(this._url+'/flights?filter[departs_at_ge]='+time, { headers, withCredentials: true } );
+  }
 
-
-
-
-
-
+  findNews(cityName): Observable<News[]>{
+    const headers = new HttpHeaders({'Content-Type': 'Content-Type: application/json'});
+    return this.http.get<News[]>(this._news + cityName + this.news_);
+  }
 }

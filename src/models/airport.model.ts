@@ -7,6 +7,4 @@ city: string;
 state: string;
 city_url: string;
 info: string;
-
-
 }

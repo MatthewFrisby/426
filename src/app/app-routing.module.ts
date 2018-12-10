@@ -6,9 +6,6 @@ import { Home } from '@components/home/home.component';
 import { FindFlight } from '@components/find_flight/find_flight.component';
 
 
-
-
-
 const routes: Routes = [
   {path: '', redirectTo:'/login', pathMatch: 'full'},
   {path: 'login', component: Login},

@@ -1,4 +1,4 @@
-<h1>Next Flight From {{air.city}}</h1>
+<!--><h1>Next Flight From {{air.city}}</h1><!-->
 <h3>When is the earliest you can leave?</h3>
 <div>
   <p>Please enter in military time e.g. 1:00pm as 13:00 </p>
@@ -13,12 +13,13 @@
 
   <h3>Lands At:</h3>
   <h5>{{rand.name}}</h5>
+  <h5>{{rand.city}}</h5>
+  <h5>HERE: {{news.articles}}</h5>
   <h3>At:</h3>
   <h5>{{fli.arrives_at}}</h5>
 
   <button routerLink="/find_flight/{{code}}">Book Flight</button>
   <button routerLink="/find_flight/{{code}}">Try Again</button>
 
-
-
 <div>
+
