@@ -6,6 +6,7 @@ import { Flight } from '@models/flight.model';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpHeaders } from '@angular/common/http';
+import { Ticket } from '@models/ticket.model';
 
 
 @Injectable()
@@ -50,7 +51,12 @@ export class FlightService {
         }
 
 
+        createTicket(ticket: Ticket[]): Observable<Ticket[]>{
+          const headers = new HttpHeaders({ 'Content':"application/json",'Content-Type': 'Content-Type: application/json'});
+          return this.http.post<Ticket[]>(this._url+'/tickets',({ticket: ticket}), { withCredentials: true } )
+        }
 
+      
 
 
 

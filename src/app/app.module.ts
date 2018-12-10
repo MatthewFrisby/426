@@ -9,6 +9,8 @@ import { Login } from '@components/login/login.component';
 import { Registration } from '@components/registration/registration.component';
 import { Home } from '@components/home/home.component';
 import { FindFlight } from '@components/find_flight/find_flight.component';
+import { Account } from '@components/account/account.component';
+
 
 
 
@@ -21,7 +23,8 @@ import { FindFlight } from '@components/find_flight/find_flight.component';
     Login,
     Registration,
     Home,
-    FindFlight
+    FindFlight,
+    Account
   ],
   imports: [
     BrowserModule,
