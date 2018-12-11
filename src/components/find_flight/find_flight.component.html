@@ -1,24 +1,36 @@
-<h1>Next Flight From {{air.city}}</h1>
-<h3>When is the earliest you can leave?</h3>
-<div>
-  <p>Please enter in military time e.g. 1:00pm as 13:00 </p>
-<input (keyup)="onKey($event)" >
+<div class="header">
+	<img src="assets/plane.png" alt="plane" class="img-plane">
+	<div class="header-text">
+		<h1>Get Me Outta Here</h1>
+		<p class="tagline">Literally run away from your problems</p>
+	</div>
+</div>
+<div class="page">
+	<ul class="navbar">
+		<li class="navbar-item"><a routerLink="idk">Home</a></li>
+		<li class="navbar-item"><a routerLink="idk">Account</a></li>
+	</ul>
 
-<div *ngIf="fli">
-  <h2>We found you a flight</h2>
-  <h3>Departs From:</h3>
-  <h5>{{air.name}}</h5>
-  <h3>At:</h3>
-  <h5>{{fli.departs_at}}</h5>
+	<div class="body">
+		<h2>Next Flight From {{air.city}}</h2><br>
 
-  <h3>Lands At:</h3>
-  <h5>{{rand.name}}</h5>
-  <h3>At:</h3>
-  <h5>{{fli.arrives_at}}</h5>
+		<p>When is the earliest you can leave?</p><br>
+		<div>
+			<h3>Please enter in military time e.g. 1:00 PM as 13:00</h3>
+			<input (keyup)="onKey($event)" >
 
-  <button routerLink="/find_flight/{{code}}">Book Flight</button>
-  <button routerLink="/find_flight/{{code}}">Try Again</button>
+			<div *ngIf="fli">
+				<h3>Departure:</h3>
+				<p>{{air.name}}</p>
+				<p>{{fli.departs_at}}</p><br>
 
+				<h3>Arrival:</h3>
+				<p>{{rand.name}}</p>
+				<p>{{fli.arrives_at}}</p><br>
 
-
-<div>
+				<button class="btn-flight" id="try-again" routerLink="/find_flight/{{code}}"><span>Try Again  </span></button>
+				<button class="btn-flight" id="book-flight" routerLink="/find_flight/{{code}}"><span>Book Flight  </span></button>
+			</div>
+		</div>
+	</div>
+</div>
