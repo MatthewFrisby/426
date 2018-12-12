@@ -7,6 +7,8 @@ import { Airport } from '@models/airport.model';
 import { Flight } from '@models/flight.model';
 import { Ticket } from '@models/ticket.model';
 import {FlightService } from '@services/flight.service';
+import { News } from '@models/news.model';
+import { Article } from '@models/article.model';
 
 @Component({
   selector: 'find-root',
@@ -25,6 +27,8 @@ export class FindFlight implements OnInit{
     newTicket = new Ticket;
     test: {ticket: Ticket};
     recievedTicket: Ticket[];
+    article: Article[];
+    news: News[];
 
     constructor(
         private router: Router,
@@ -38,6 +42,7 @@ export class FindFlight implements OnInit{
         this.flight.filterAirports(this.code).subscribe(data => {this.air = data["0"] } );
         this.flight.filterAirports("").subscribe(data => {this.rand = data[Math.floor(Math.random() * 99)] } );
 
+
         this.ticket = this.formBuilder.group({
             first_name: [''],
             last_name: ['' ],
@@ -49,6 +54,11 @@ export class FindFlight implements OnInit{
     onKey(event: any) {
 
      this.flight.findFlights(event.target.value).subscribe(data => {this.fli = data[Math.floor(Math.random() * 4)] } ); //.subscribe(data => this.air = data);
+
+     this.flight.findNews(this.rand.city).subscribe(data=>{ this.news = data});
+
+     this.article = this.news.articles[0];
+     
 
   }
 
@@ -87,7 +97,7 @@ export class FindFlight implements OnInit{
     this.flight.createTicket(this.newTicket).subscribe(data=>{this.recievedTicket = data});
 
 
-    console.log(this.recievedTicket)
+
   }
 
 
