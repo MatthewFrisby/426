@@ -56,6 +56,11 @@ export class FlightService {
     return this.http.post<Ticket[]>(this._url+'/tickets',({ticket: ticket}), { withCredentials: true } )
   }
 
+  getTicket(): Observable<Ticket[]>{
+    const headers = new HttpHeaders({ 'Content-Type': 'Content-Type: application/json'});
+    return this.http.get<Ticket[]>(this._url+'/tickets', { withCredentials: true } )
+  }
+
   findNews(cityName): Observable<News[]>{
     const headers = new HttpHeaders({'Content-Type': 'Content-Type: application/json'});
     return this.http.get<News[]>(this._news + cityName + this.news_);

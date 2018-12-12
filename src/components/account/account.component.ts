@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {  OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
+import { Ticket } from '@models/ticket.model';
 
 import {FlightService } from '@services/flight.service';
 
@@ -15,6 +16,9 @@ import {FlightService } from '@services/flight.service';
 
 export class Account implements OnInit {
 
+
+    tickets: Ticket[];
+
     constructor(
 
         private router: Router,
@@ -25,6 +29,8 @@ export class Account implements OnInit {
     }
 
     ngOnInit() {
+      this.flight.getTicket().subscribe(data=>{this.tickets=data});
+
 
     }
 

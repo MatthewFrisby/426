@@ -1,3 +1,9 @@
 <div>
-	<h3> This is the account page </h3>
+	<h3> Check your bookings </h3>
+
+	<p *ngFor="let ticket of tickets" >
+		<a class="airport">{{ticket.info}}</a>
+		<br/>
+		<a class="airport">Ticket Price: ${{ticket.price_paid}}</a>
+	</p>
 </div>

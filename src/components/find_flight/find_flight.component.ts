@@ -81,10 +81,12 @@ export class FindFlight implements OnInit{
     this.newTicket.gender = this.ticket.controls['gender'].value;
     this.newTicket.is_purchased = true;
     this.newTicket.info = ("Departing From: "+ this.air.name + "\n\n"+ "Arriving At: "+ this.rand.name);
-    this.newTicket.price_paid= (Math.floor(Math.random() * 200+261)+.19);
+    this.newTicket.price_paid= (Math.floor(Math.random() * 400+261)+.19);
 
 
     this.flight.createTicket(this.newTicket).subscribe(data=>{this.recievedTicket = data});
+
+
     console.log(this.recievedTicket)
   }
 
