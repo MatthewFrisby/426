@@ -4,7 +4,9 @@
   <p>Please enter in military time e.g. 1:00pm as 13:00 </p>
 <input (keyup)="onKey($event)" >
 
-<div *ngIf="fli">
+
+
+<div *ngIf="fli" >
   <h2>We found you a flight</h2>
   <h3>Departs From:</h3>
   <h5>{{air.name}}</h5>
@@ -19,33 +21,37 @@
   <button (click)="onClickMe()">Ready To Book</button>
 
   </div>
-
+  <br/>
+  <br/>
   <div *ngIf="bool">
-    <form [formGroup]="ticket" (ngSubmit)="onSubmit()">
+    <form [formGroup]="ticket" class="center-justified" (ngSubmit)="onSubmit()">
         <div>
-            <label for="first_name">First Name</label>
+            <label for="first_name">First Name &nbsp;</label>
             <input type="text" formControlName="first_name"   />
 
         </div>
         <div>
-            <label for="last_name">Last Name</label>
+            <label for="last_name">Last Name &nbsp;</label>
             <input type="text" formControlName="last_name"   />
 
         </div>
         <div>
-            <label for="age">Age</label>
+            <label for="age">Age  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
             <input type="number" formControlName="age"   />
 
         </div>
         <div>
-            <label for="gender">Gender</label>
+            <label for="gender">Gender &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </label>
             <input type="text" formControlName="gender"  />
 
         </div>
-        <button>Book Now</button>
+        <br/>
+        <button style="text-align:center">Book Now</button>
 
 
     </form>
-    <h1>{{recievedTicket.first_name}}</h1>
+    <h3>{{recievedTicket.info}}</h3>
+
+
 
 </div>

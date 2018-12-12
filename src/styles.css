@@ -1,1 +1,260 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+/*Color Palette: https://coolors.co/ffffff-d9f0ff-87c9ff-5599ff-333333*/
+
+body {
+	background: url(./assets/background.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding: 1px;
+	text-align: center;
+}
+
+.header {
+	padding-top: 15px;
+	margin: auto;
+	width: 70vw;
+	height: 150px;
+}
+
+.img-plane {
+	width: 160px;
+	height: 111px;
+	float: left;
+	padding-right: 10px;
+}
+.center-justified {
+  text-align: justify;
+  margin: 0 auto;
+  width: 30em;
+}
+.header-text {
+	float: left;
+}
+
+.tagline {
+	font-style: italic;
+}
+
+.page {
+	background-color: #d9f0ff;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 70vw;
+	min-height: 78vh;
+	padding-bottom: 40px;
+	margin-bottom: 40px;
+}
+
+.body {
+	width: 60vw;
+	margin: auto;
+}
+
+/*website title*/
+h1 {
+	font-family: Georgia, serif;
+	font-weight: bold;
+	font-size: 45px;
+}
+
+/*page title*/
+h2 {
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: bold;
+	font-size: 36px;
+}
+
+/*form prompt*/
+h3, .form-prompt {
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+img, p, .navbar, input, .form-control, .btn, .flight-search, button {
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: normal;
+	font-size: 22px;
+}
+
+.navbar {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333333;
+	border-radius: 10px 10px 0px 0px;
+}
+
+.navbar-item {
+	float: left;
+}
+
+.navbar-item a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.navbar-item a:hover {
+	background-color: #111111;
+}
+
+.form-control {
+	margin: auto;
+}
+
+#login {
+	display: inline-block;
+	border: none;
+	border-radius: 10px;
+	background-color: #5599ff;
+	color: #ffffff;
+	box-shadow: 5px 5px 8px #333333;
+	text-align: center;
+	padding: 10px;
+	width: 120px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 10px;
+}
+
+#login span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+#login span:after {
+	content: '\27A4';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+#login:hover span {
+	padding-right: 25px;
+}
+
+#login:hover span:after {
+	opacity: 1;
+	right: 0;
+}
+
+#cancel {
+
+}
+
+input, .form-control {
+	width: 20vw;
+	border-radius: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#search-container {
+	box-shadow: 5px 5px 8px #333333;
+	width: 20vw;
+	border-radius: 10px;
+	margin: auto;
+}
+
+.airport-search:first-child {
+	border-radius: 10px 10px 0px 0px;
+}
+
+.airport-search:last-child {
+	border-radius: 0px 0px 10px 10px;
+}
+
+.airport-search:only-child {
+	border-radius: 10px;
+}
+
+.airport-search {
+	margin: auto;
+	width: 20vw;
+	height: 40px;
+	background-color: #5599ff;
+	line-height: 40px;
+}
+
+.airport-search:hover {
+	background-color: #87c9ff;
+}
+
+.airport {
+	color: #ffffff;
+}
+
+.airport:hover {
+	color: #ffffff;
+}
+
+.btn-flight {
+	display: inline-block;
+	border: none;
+	border-radius: 10px;
+	background-color: #5599ff;
+	color: #ffffff;
+	box-shadow: 5px 5px 8px #333333;
+	text-align: center;
+	padding: 10px;
+	width: 180px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 10px;
+}
+
+.btn-flight span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+#try-again span:before {
+	content: '\2B9C ';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	left: -20px;
+	transition: 0.5s;
+}
+
+#try-again:hover span {
+	padding-left: 25px;
+}
+
+#try-again:hover span:before {
+	opacity: 1;
+	left: 0;
+}
+
+
+#book-flight span:after {
+	content: '\2708';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+#book-flight:hover span {
+	padding-right: 25px;
+}
+
+#book-flight:hover span:after {
+	opacity: 1;
+	right: 0;
+}
