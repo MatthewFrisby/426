@@ -1,17 +1,11 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import {  OnInit } from '@angular/core';
+import { OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
 import { Airport } from '@models/airport.model';
 import { Flight } from '@models/flight.model';
 import { Ticket } from '@models/ticket.model';
-
-
-
-
-
-
 import {FlightService } from '@services/flight.service';
 
 @Component({
@@ -20,9 +14,7 @@ import {FlightService } from '@services/flight.service';
   providers: [FlightService]
 })
 
-
 export class FindFlight implements OnInit{
-
     air: Airport;
     fli: Flight;
     rand: Airport;

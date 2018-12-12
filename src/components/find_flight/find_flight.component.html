@@ -2,9 +2,7 @@
 <h3>When is the earliest you can leave?</h3>
 
   <p>Please enter in military time e.g. 1:00pm as 13:00 </p>
-<input (keyup)="onKey($event)" >
-
-
+<input (keyup)="onKey($event)">
 
 <div *ngIf="fli" >
   <h2>We found you a flight</h2>
@@ -36,12 +34,12 @@
 
         </div>
         <div>
-            <label for="age">Age  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+            <label for="age">Age  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
             <input type="number" formControlName="age"   />
 
         </div>
         <div>
-            <label for="gender">Gender &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </label>
+            <label for="gender">Gender &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
             <input type="text" formControlName="gender"  />
 
         </div>
