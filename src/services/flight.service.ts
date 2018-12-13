@@ -9,7 +9,8 @@ import { HttpHeaders } from '@angular/common/http';
 import { Ticket } from '@models/ticket.model';
 import { Article } from '@models/article.model';
 import { News } from '@models/news.model';
-
+import { Itinerary } from '@models/itinerary.model';
+import { Instance } from '@models/instance.model';
 
 
 @Injectable()
@@ -51,9 +52,19 @@ export class FlightService {
     return this.http.get<Flight[]>(this._url+'/flights?filter[departs_at_ge]='+time, { headers, withCredentials: true } );
   }
 
-  createTicket(ticket: Ticket): Observable<Ticket[]>{
+  createItinerary(itinerary: Itinerary): Observable<Itinerary[]>{
     const headers = new HttpHeaders({ 'Content':"application/json",'Content-Type': 'Content-Type: application/json'});
-    return this.http.post<Ticket[]>(this._url+'/tickets',({ticket: ticket}), { withCredentials: true } )
+    return this.http.post<Itinerary[]>(this._url+'/itineraries',({itinerary: itinerary}), {withCredentials: true } )
+  }
+
+  createTicket(ticket: Ticket): Observable<Ticket[]>{
+   const headers = new HttpHeaders({ 'Content':"application/json",'Content-Type': 'Content-Type: application/json'});
+   return this.http.post<Ticket[]>(this._url+'/tickets',({ticket: ticket}), { withCredentials: true } )
+ }
+
+  createInstance(instance: Instance): Observable<Instance[]>{
+    const headers = new HttpHeaders({ 'Content':"application/json",'Content-Type': 'Content-Type: application/json'});
+    return this.http.post<Instance[]>(this._url+'/instances',({instance: instance}), {withCredentials: true } )
   }
 
   getTicket(): Observable<Ticket[]>{
@@ -61,8 +72,20 @@ export class FlightService {
     return this.http.get<Ticket[]>(this._url+'/tickets', { withCredentials: true } )
   }
 
+  getItinerary(): Observable<Itinerary[]>{
+    const headers = new HttpHeaders({ 'Content-Type': 'Content-Type: application/json'});
+    return this.http.get<Itinerary[]>(this._url+'/itineraries', { withCredentials: true } )
+  }
+  getInstance(): Observable<Instance[]>{
+    const headers = new HttpHeaders({ 'Content-Type': 'Content-Type: application/json'});
+    return this.http.get<Instance[]>(this._url+'/instances', { withCredentials: true } )
+  }
+
   findNews(cityName): Observable<News[]>{
     const headers = new HttpHeaders({'Content-Type': 'Content-Type: application/json'});
     return this.http.get<News[]>(this._news + cityName + this.news_);
   }
+
+
+
 }

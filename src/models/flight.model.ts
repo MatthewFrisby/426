@@ -1,4 +1,5 @@
 export class Flight{
+id: number;
 departs_at: string;
 arrives_at: string;
 number: string;

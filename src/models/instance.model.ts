@@ -1,4 +1,4 @@
-export class Instances{
+export class Instance{
 flight_id: number;
 date: string;
 is_cancelled: boolean;
