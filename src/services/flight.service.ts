@@ -73,9 +73,9 @@ export class FlightService {
   }
 
 
-  findNews(cityName): Observable<News[]>{
+  findNews(cityName): Observable<News>{
     const headers = new HttpHeaders({'Content-Type': 'Content-Type: application/json'});
-    return this.http.get<News[]>(this._news + cityName + this.news_);
+    return this.http.get<News>(this._news + cityName + this.news_);
   }
 
   getSingleTicket(id: string): Observable<Ticket>{

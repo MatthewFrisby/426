@@ -29,7 +29,7 @@ export class FindFlight implements OnInit{
     newTicket = new Ticket;
     recievedTicket: Ticket[];
     article: Article;
-    news: News[];
+    news: News;
     instance = new Instance;
     itinerary = new Itinerary;
     recievedInstance: Instance;
