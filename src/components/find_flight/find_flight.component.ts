@@ -28,7 +28,7 @@ export class FindFlight implements OnInit{
     submitted = false;
     newTicket = new Ticket;
     recievedTicket: Ticket[];
-    article: Article[];
+    article: Article;
     news: News[];
     instance = new Instance;
     itinerary = new Itinerary;
@@ -61,7 +61,7 @@ export class FindFlight implements OnInit{
 
      this.flight.findFlights(event.target.value).subscribe(data => {this.fli = data[Math.floor(Math.random() * 10)] } ); //.subscribe(data => this.air = data);
      this.flight.findNews(this.rand.city).subscribe(data=>{ this.news = data});
-     this.article = this.news["0"].articles[0];
+     this.article = this.news.articles["0"];
 
 
   }

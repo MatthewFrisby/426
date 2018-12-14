@@ -9,25 +9,28 @@
 		<h3>Ticket: {{oneTicket.id}} </h3>
 		<p> {{oneTicket.info}} </p>
 		<p> Price Paid: ${{oneTicket.price_paid}} </p>
+
+		<div *ngIf="!itin">
+			<button (click)="itineraryL()" class="btn-animated btn-arrow btn-ticket"><span>Load Itinerary</span></button>
+		</div>
+
+		<div *ngIf="itin">
+			<h3>Itinerary: {{oneTicket.itinerary_id}} </h3>
+			<p>Confirmation Code: {{itinerary.confirmation_code}} </p>
+			<p>Confirmation Email: {{itinerary.email}} </p>
+		</div><br>
+
+		<div *ngIf="!inst">
+			<button (click)="instanceL()" class="btn-animated btn-arrow btn-ticket"><span>Load Instance</span></button>
+		</div>
+		<div *ngIf="inst">
+
+			<h3>Instance: {{oneTicket.instance_id}} </h3>
+			<p>Flight ID: {{instance.flight_id}} </p>
+			<p>Date: {{instance.date}} </p>
+		</div>
+
 	</div><br>
 
-	<div *ngIf="!itin">
-		<button (click)="itineraryL()" class="btn-animated btn-arrow btn-ticket"><span>Load Itinerary</span></button>
-	</div>
 
-	<div *ngIf="itin">
-		<h3>Itinerary: {{oneTicket.itinerary_id}} </h3>
-		<p>Confirmation Code: {{itinerary.confirmation_code}} </p>
-		<p>Confirmation Email: {{itinerary.email}} </p>
-	</div><br>
-
-	<div *ngIf="!inst">
-		<button (click)="instanceL()" class="btn-animated btn-arrow btn-ticket"><span>Load Instance</span></button>
-	</div>
-	<div *ngIf="inst">
-
-		<h3>Instance: {{oneTicket.instance_id}} </h3>
-		<p>Flight ID: {{instance.flight_id}} </p>
-		<p>Date: {{instance.date}} </p>
-	</div>
 </div>

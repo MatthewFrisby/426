@@ -75,7 +75,7 @@ h3, .form-prompt, .ticket-prompt {
 	font-size: 24px;
 }
 
-img, p, .navbar, input, .form-control, .btn, button {
+img, p, .navbar, input, .form-control, .btn, button, .article {
 	font-family: Verdana, Geneva, sans-serif;
 	font-weight: normal;
 	font-size: 22px;
