@@ -1,15 +1,14 @@
 <div class="body">
-  <h2>Departure City</h2><br>
+	<h2>Departure City</h2><br>
 
-  <p>Tired of the constant stress of school or work? Unhappy wife, unhappy life? Have a couple of shitty kids? Well fret no more! You can get the hell out of there using this simple search for the fastest flight out of the closest airport.</p><br>
+	<p>Tired of the constant stress of school or work? Unhappy wife, unhappy life? Have a couple of shitty kids? Well fret no more! You can get the hell out of there using this simple search for the fastest flight out of the closest airport.</p><br>
 
-  <h3>Type the departure city below</h3>
-
-  <input (keyup)="onKey($event)"><br><br>
-
-  <div id="search-container">
-    <p *ngFor="let airport of air" (click)="onSelect(airport)" class="airport-search">
-      <a routerLink="/find_flight/{{airport.code}}" class="airport">{{airport.city}}</a>
-    </p>
-  </div>
+	<h3>Type the departure city below</h3>
+	<input (keyup)="onKey($event)"><br><br>
+	
+	<div id="search-container">
+		<p *ngFor="let airport of air" (click)="onSelect(airport)" class="airport">
+			<a routerLink="/find_flight/{{airport.code}}" class="result">{{airport.city}}</a>
+		</p>
+	</div>
 </div>

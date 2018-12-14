@@ -69,13 +69,13 @@ h2 {
 }
 
 /*form prompt*/
-h3, .form-prompt {
+h3, .form-prompt, .ticket-prompt {
 	font-family: Verdana, Geneva, sans-serif;
 	font-weight: bold;
 	font-size: 24px;
 }
 
-img, p, .navbar, input, .form-control, .btn, .flight-search, button {
+img, p, .navbar, input, .form-control, .btn, button {
 	font-family: Verdana, Geneva, sans-serif;
 	font-weight: normal;
 	font-size: 22px;
@@ -110,50 +110,6 @@ img, p, .navbar, input, .form-control, .btn, .flight-search, button {
 	margin: auto;
 }
 
-#login {
-	display: inline-block;
-	border: none;
-	border-radius: 10px;
-	background-color: #5599ff;
-	color: #ffffff;
-	box-shadow: 5px 5px 8px #333333;
-	text-align: center;
-	padding: 10px;
-	width: 120px;
-	transition: all 0.5s;
-	cursor: pointer;
-	margin: 10px;
-}
-
-#login span {
-	cursor: pointer;
-	display: inline-block;
-	position: relative;
-	transition: 0.5s;
-}
-
-#login span:after {
-	content: '\27A4';
-	position: absolute;
-	opacity: 0;
-	top: 0;
-	right: -20px;
-	transition: 0.5s;
-}
-
-#login:hover span {
-	padding-right: 25px;
-}
-
-#login:hover span:after {
-	opacity: 1;
-	right: 0;
-}
-
-#cancel {
-
-}
-
 input, .form-control {
 	width: 20vw;
 	border-radius: 10px;
@@ -161,46 +117,7 @@ input, .form-control {
 	padding-right: 5px;
 }
 
-#search-container {
-	box-shadow: 5px 5px 8px #333333;
-	width: 20vw;
-	border-radius: 10px;
-	margin: auto;
-}
-
-.airport-search:first-child {
-	border-radius: 10px 10px 0px 0px;
-}
-
-.airport-search:last-child {
-	border-radius: 0px 0px 10px 10px;
-}
-
-.airport-search:only-child {
-	border-radius: 10px;
-}
-
-.airport-search {
-	margin: auto;
-	width: 20vw;
-	height: 40px;
-	background-color: #5599ff;
-	line-height: 40px;
-}
-
-.airport-search:hover {
-	background-color: #87c9ff;
-}
-
-.airport {
-	color: #ffffff;
-}
-
-.airport:hover {
-	color: #ffffff;
-}
-
-.btn-flight {
+.btn-animated {
 	display: inline-block;
 	border: none;
 	border-radius: 10px;
@@ -215,34 +132,26 @@ input, .form-control {
 	margin: 10px;
 }
 
-.btn-flight span {
+#btn-login {
+	width: 100px;
+}
+
+.btn-flight {
+	width: 180px;
+}
+
+.btn-ticket {
+	width: 220px;
+}
+
+.btn-animated span {
 	cursor: pointer;
 	display: inline-block;
 	position: relative;
 	transition: 0.5s;
 }
 
-#try-again span:before {
-	content: '\2B9C ';
-	position: absolute;
-	opacity: 0;
-	top: 0;
-	left: -20px;
-	transition: 0.5s;
-}
-
-#try-again:hover span {
-	padding-left: 25px;
-}
-
-#try-again:hover span:before {
-	opacity: 1;
-	left: 0;
-}
-
-
-#book-flight span:after {
-	content: '\2708';
+.btn-animated span:after {
 	position: absolute;
 	opacity: 0;
 	top: 0;
@@ -250,11 +159,93 @@ input, .form-control {
 	transition: 0.5s;
 }
 
-#book-flight:hover span {
+.btn-arrow span:after {
+	content: '\27A4';
+}
+
+.btn-plane span:after {
+	content: '\2708';
+}
+
+.btn-animated:hover span {
 	padding-right: 25px;
 }
 
-#book-flight:hover span:after {
+.btn-animated:hover span:after {
 	opacity: 1;
 	right: 0;
+}
+
+#search-container {
+	box-shadow: 5px 5px 8px #333333;
+	width: 20vw;
+	border-radius: 10px;
+	margin: auto;
+}
+
+.airport:first-child {
+	border-radius: 10px 10px 0px 0px;
+}
+
+.airport:last-child {
+	border-radius: 0px 0px 10px 10px;
+}
+
+.airport:only-child {
+	border-radius: 10px;
+}
+
+.airport {
+	margin: auto;
+	width: 20vw;
+	height: 40px;
+	background-color: #5599ff;
+	line-height: 40px;
+}
+
+.airport:hover, .ticket:hover {
+	background-color: #87c9ff;
+}
+
+#ticket-container {
+	box-shadow: 5px 5px 8px #333333;
+	width: 50vw;
+	border-radius: 10px;
+	margin: auto;
+}
+
+.ticket:first-child {
+	border-radius: 10px 10px 0px 0px;
+}
+
+.ticket:last-child {
+	border-radius: 0px 0px 10px 10px;
+}
+
+.ticket:only-child {
+	border-radius: 10px;
+}
+
+.ticket {
+	margin: auto;
+	width: 50vw;
+	background-color: #5599ff;
+	line-height: 40px;
+}
+
+.result {
+	color: #ffffff;
+}
+
+.result:hover {
+	color: #ffffff;
+}
+
+.ticket-prompt {
+	width: 170px;
+	display: inline-block;
+}
+
+.ticket-input {
+	display: inline-block;
 }

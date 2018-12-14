@@ -18,7 +18,7 @@ export class FlightService {
 
   private _url: string = "http://comp426.cs.unc.edu:3001"
   private _news: string = "https://newsapi.org/v2/everything?pageSize=1&q="
-  private news_: string = "%20news&apiKey=fb033527902d4bc89e9706ddea1244f0"
+  private news_: string = "%20city&apiKey=fb033527902d4bc89e9706ddea1244f0"
 
   constructor(private http: HttpClient) { }
 

@@ -1,10 +1,12 @@
-<div>
-	<h3> Check your bookings </h3>
+<div class="body">
+	<h2>Your Tickets</h2><br>
 
-	<p *ngFor="let ticket of tickets" >
-		  <a routerLink="/ticket/{{ticket.id}}" class="airport">
-				<p>{{ticket.info}}</p>
-			<p>Ticket Price: ${{ticket.price_paid}}</p>
-		</a>
-	</p>
+	<div id="ticket-container">
+		<p *ngFor="let ticket of tickets" class="ticket">
+			<a routerLink="/ticket/{{ticket.id}}" class="result">
+				<p class="result">{{ticket.info}}</p>
+				<p class="result">Ticket Price: ${{ticket.price_paid}}</p>
+			</a>
+		</p>
+	</div>
 </div>

@@ -1,65 +1,55 @@
-<h1>Next Flight From {{air.city}}</h1>
-<h3>When is the earliest you can leave?</h3>
+<div class="body">
+	<!-- {{findNews()}} -->
+	<h2>Next Flight From {{air.city}}</h2><br>
 
-  <p>Please enter in military time e.g. 1:00pm as 13:00 </p>
-<input (keyup)="onKey($event)">
+	<p>When is the earliest you can leave?</p><br>
 
-<div *ngIf="fli" >
-  <h2>We found you a flight</h2>
-  <h3>Departs From:</h3>
-  <h5>{{air.name}}</h5>
-  <h3>At:</h3>
-  <h5>{{fli.departs_at}}</h5>
+	<h3>Please enter in military time e.g. 1:00pm as 13:00 </h3>
+	<input (keyup)="onKey($event)"><br><br>
+	<div *ngIf="fli">
+		<h3>Departure Airport:</h3>
+		<p>{{air.name}}</p>
+		<p>{{fli.departs_at}}</p><br>
 
-  <h3>Lands At:</h3>
-  <h5>{{rand.name}}</h5>
-  <h3>At:</h3>
-  <h5>{{fli.arrives_at}}</h5>
+		<h3>Arrival Airport:</h3>
+		<p>{{rand.name}}</p>
+		<p>{{fli.arrives_at}}</p><br>
 
-  <button (click)="onClickMe()">Ready To Book</button>
+		<!-- <h3>Latest News in {{rand.city}}:</h3>
+		<a href="{{article.url}}">{{article.title}}</a><br><br> -->
 
-  </div>
+		<button (click)="onClickMe()" class="btn-animated btn-arrow btn-flight"><span>Ticket Info</span></button>
+	</div><br><br>
 
+	<div *ngIf="bool">
+		<form [formGroup]="ticket" (ngSubmit)="onSubmit()">
+			<div>
+				<label for="first_name" class="ticket-prompt">First Name</label>
+				<input type="text" formControlName="first_name" class="ticket-input"/>
+			</div>
+			<div>
+				<label for="last_name" class="ticket-prompt">Last Name</label>
+				<input type="text" formControlName="last_name" class="ticket-input"/>
+			</div>
+			<div>
+				<label for="email" class="ticket-prompt">Email</label>
+				<input type="text" formControlName="email" class="ticket-input"/>
+			</div>
+			<div>
+				<label for="age" class="ticket-prompt">Age</label>
+				<input type="number" formControlName="age" class="ticket-input"/>
+			</div>
+			<div>
+				<label for="gender" class="ticket-prompt">Gender</label>
+				<input type="text" formControlName="gender" class="ticket-input"/>
+			</div><br><br>
 
+			<button class="btn-animated btn-plane btn-flight"><span>Book Flight</span></button>
+		</form><br>
 
-  <br/>
-  <br/>
-  <div *ngIf="bool">
-    <form [formGroup]="ticket" class="center-justified" (ngSubmit)="onSubmit()">
-        <div>
-            <label for="first_name">First Name &nbsp;</label>
-            <input type="text" formControlName="first_name"   />
-
-        </div>
-        <div>
-            <label for="last_name">Last Name &nbsp;</label>
-            <input type="text" formControlName="last_name"   />
-
-        </div>
-        <div>
-            <label for="email">Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-            <input type="text" formControlName="email"   />
-
-        </div>
-        <div>
-            <label for="age">Age  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
-            <input type="number" formControlName="age"   />
-
-        </div>
-        <div>
-            <label for="gender">Gender &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
-            <input type="text" formControlName="gender"  />
-
-        </div>
-        <br/>
-        <button style="text-align:center">Book Now</button>
-
-
-    </form>
-    <div *ngIf="recievedTicket">
-
-    <h3>{{recievedTicket.info}}</h3>
-    </div>
-
-
+		<div *ngIf="recievedTicket">
+			<h3>Successfully Booked</h3>
+			<p>{{recievedTicket.info}}</p>
+		</div>
+	</div>
 </div>
