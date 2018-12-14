@@ -1,0 +1,29 @@
+<div *ngIf="!tick">
+<button (click)="ticketL()">Load Ticket</button>
+</div>
+
+<div *ngIf="tick">
+	<h1>Ticket: {{oneTicket.id}} </h1>
+	<h3> {{oneTicket.info}} </h3>
+	<h3> Price Paid: ${{oneTicket.price_paid}} </h3>
+</div>
+
+<div *ngIf="!itin">
+	<button (click)="itineraryL()">Load Itinerary</button>
+	</div>
+
+<div *ngIf="itin">
+	<h1>Itinerary: {{oneTicket.itinerary_id}} </h1>
+	<h3>Confirmation Code: {{itinerary.confirmation_code}} </h3>
+	<h3>Confirmation Email: {{itinerary.email}} </h3>
+</div>
+
+<div *ngIf="!inst">
+	<button (click)="instanceL()">Load Instance</button>
+</div>
+<div *ngIf="inst">
+
+	<h1>Instance: {{oneTicket.instance_id}} </h1>
+	<h3>Flight ID: {{instance.flight_id}} </h3>
+	<h3>Date: {{instance.date}} </h3>
+</div>

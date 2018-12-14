@@ -10,6 +10,8 @@ import { Registration } from '@components/registration/registration.component';
 import { Home } from '@components/home/home.component';
 import { FindFlight } from '@components/find_flight/find_flight.component';
 import { Account } from '@components/account/account.component';
+import { TicketDetails } from '@components/ticket/ticket.component';
+
 
 
 
@@ -24,7 +26,8 @@ import { Account } from '@components/account/account.component';
     Registration,
     Home,
     FindFlight,
-    Account
+    Account,
+    TicketDetails
   ],
   imports: [
     BrowserModule,

@@ -32,8 +32,8 @@ export class FindFlight implements OnInit{
     news: News[];
     instance = new Instance;
     itinerary = new Itinerary;
-    recievedInstance: Instance[];
-    recievedItinerary: Itinerary[];
+    recievedInstance: Instance;
+    recievedItinerary: Itinerary;
 
     constructor(
         private router: Router,
@@ -77,6 +77,10 @@ export class FindFlight implements OnInit{
       this.flight.filterAirports("e").subscribe(data => {this.rand = data[Math.floor(Math.random() * 99)] } );
   }
 
+  async delay(ms: number) {
+    await new Promise(resolve => setTimeout(()=>resolve(), ms)).then(()=>console.log("done"));
+}
+
   onSubmit() {
       this.submitted = true;
 
@@ -88,14 +92,15 @@ export class FindFlight implements OnInit{
 
     this.itinerary.email = this.ticket.controls['email'].value;
     this.itinerary.confirmation_code = Math.random().toString(36).substring(2, 7);
-    this.flight.createItinerary(this.itinerary).subscribe(data => {this.recievedItinerary = data; this.newTicket.itinerary_id = data["0"].id});
-
+    this.flight.createItinerary(this.itinerary).subscribe(data => {this.recievedItinerary = data});
+    this.delay(1500);
 
     this.instance.flight_id = this.fli.id;
     this.instance.date = this.fli.departs_at.substring(0, 10);
     this.instance.is_cancelled = false;
     this.flight.createInstance(this.instance).subscribe(data => {this.recievedInstance = data });
 
+    this.delay(1500);
 
     this.newTicket.first_name= this.ticket.controls['first_name'].value;
     this.newTicket.last_name = this.ticket.controls['last_name'].value;
@@ -104,8 +109,8 @@ export class FindFlight implements OnInit{
     this.newTicket.is_purchased = true;
     this.newTicket.info = ("Departing From: "+ this.air.name + "\n\n"+ "Arriving At: "+ this.rand.name);
     this.newTicket.price_paid= (Math.floor(Math.random() * 400+261)+.19);
-
-    this.newTicket.instance_id = this.fli.id;
+    this.newTicket.itinerary_id = this.recievedItinerary.id;
+    this.newTicket.instance_id = this.recievedInstance.id;
     this.flight.createTicket(this.newTicket).subscribe(data=>{this.recievedTicket = data});
 
 
